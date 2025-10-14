@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه پیدا نشد - 404</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .glow {
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.7);
+        }
+        .search-box {
+            box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+        }
+        .farsi-num {
+            font-feature-settings: "ss01";
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-purple-400 flex items-center">
+                <i data-feather="compass" class="ml-2"></i>
+                وبلاگ تاریک
+            </a>
+            <nav>
+                <ul class="flex space-x-6 space-x-reverse">
+                    <li><a href="#" class="hover:text-purple-300 transition">خانه</a></li>
+                    <li><a href="#" class="hover:text-purple-300 transition">مقالات</a></li>
+                    <li><a href="#" class="hover:text-purple-300 transition">درباره ما</a></li>
+                    <li><a href="#" class="hover:text-purple-300 transition">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center">
+        <div class="container mx-auto px-4 py-12 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-8xl md:text-9xl font-bold text-purple-400 glow mb-4 farsi-num">۴۰۴</h1>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">صفحه مورد نظر پیدا نشد!</h2>
+                <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                    به نظر می‌رسد در تاریکی گم شده‌اید. اما نگران نباشید، می‌توانید با استفاده از جستجو یا دکمه‌های زیر مسیر درست را پیدا کنید.
+                </p>
+                
+                <div class="search-box bg-slate-800 rounded-full p-1 max-w-md mx-auto mb-10">
+                    <div class="flex items-center">
+                        <input type="text" placeholder="جستجو در وبلاگ..." class="bg-transparent border-none outline-none w-full px-5 py-3 text-gray-300">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white rounded-full p-3 transition">
+                            <i data-feather="search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full transition flex items-center">
+                        <i data-feather="home" class="ml-2"></i>
+                        بازگشت به خانه
+                    </a>
+                    <a href="#" class="bg-slate-700 hover:bg-slate-600 text-gray-300 px-6 py-3 rounded-full transition flex items-center">
+                        <i data-feather="book" class="ml-2"></i>
+                        مشاهده مقالات
+                    </a>
+                    <a href="#" class="bg-slate-700 hover:bg-slate-600 text-gray-300 px-6 py-3 rounded-full transition flex items-center">
+                        <i data-feather="mail" class="ml-2"></i>
+                        تماس با پشتیبانی
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <div class="flex justify-center space-x-6 space-x-reverse mb-6">
+                <a href="#" class="hover:text-purple-400 transition"><i data-feather="twitter"></i></a>
+                <a href="#" class="hover:text-purple-400 transition"><i data-feather="instagram"></i></a>
+                <a href="#" class="hover:text-purple-400 transition"><i data-feather="github"></i></a>
+                <a href="#" class="hover:text-purple-400 transition"><i data-feather="linkedin"></i></a>
+            </div>
+            <p>تمامی حقوق برای وبلاگ تاریک محفوظ است © <span class="farsi-num">۱۴۰۲</span></p>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        
+        // Random floating animation for 404 text
+        document.addEventListener('DOMContentLoaded', function() {
+            const errorText = document.querySelector('.glow');
+            
+            function floatAnimation() {
+                const randomX = (Math.random() * 10) - 5;
+                const randomY = (Math.random() * 10) - 5;
+                
+                errorText.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                
+                setTimeout(floatAnimation, 2000);
+            }
+            
+            floatAnimation();
+        });
+    </script>
+</body>
+</html>

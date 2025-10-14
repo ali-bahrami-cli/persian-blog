@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نور داشبورد - پنل مدیریت وبلاگ فارسی</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        
+        .rtl-dir {
+            direction: rtl;
+        }
+        
+        .sidebar-item {
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-item:hover {
+            background-color: rgba(14, 165, 233, 0.1);
+        }
+        
+        .sidebar-item.active {
+            background-color: rgba(14, 165, 233, 0.2);
+            border-right: 3px solid #0ea5e9;
+        }
+        
+        .dark .sidebar-item.active {
+            background-color: rgba(14, 165, 233, 0.3);
+        }
+        
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700">
+                <div class="flex items-center justify-center h-16 px-4 border-b border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center">
+                        <i data-feather="sun" class="text-primary-600 dark:text-primary-400 w-6 h-6"></i>
+                        <span class="mr-2 text-xl font-bold text-gray-800 dark:text-white">نور داشبورد</span>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
+                    <nav class="flex-1 space-y-2">
+                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium rounded-md sidebar-item active">
+                            <i data-feather="home" class="w-5 h-5 ml-3 text-primary-600 dark:text-primary-400"></i>
+                            پیشخوان
+                        </a>
+                        <a href="posts.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-md sidebar-item">
+                            <i data-feather="edit" class="w-5 h-5 ml-3 text-primary-600 dark:text-primary-400"></i>
+                            نوشته‌ها
+                        </a>
+                        <a href="categories.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-md sidebar-item">
+                            <i data-feather="folder" class="w-5 h-5 ml-3 text-primary-600 dark:text-primary-400"></i>
+                            دسته‌بندی‌ها
+                        </a>
+                        <a href="comments.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-md sidebar-item">
+                            <i data-feather="message-square" class="w-5 h-5 ml-3 text-primary-600 dark:text-primary-400"></i>
+                            نظرات
+                        </a>
+                        <a href="users.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-md sidebar-item">
+                            <i data-feather="users" class="w-5 h-5 ml-3 text-primary-600 dark:text-primary-400"></i>
+                            کاربران
+                        </a>
+                        <a href="settings.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-md sidebar-item">
+                            <i data-feather="settings" class="w-5 h-5 ml-3 text-primary-600 dark:text-primary-400"></i>
+                            تنظیمات
+                        </a>
+                    </nav>
+                </div>
+                <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center">
+                        <img class="w-10 h-10 rounded-full" src="http://static.photos/people/200x200/1" alt="Admin">
+                        <div class="mr-3">
+                            <p class="text-sm font-medium text-gray-900 dark:text-white">مدیر سیستم</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">admin@example.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Top Navigation -->
+            <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+                <div class="flex items-center md:hidden">
+                    <button class="text-gray-500 dark:text-gray-400 focus:outline-none">
+                        <i data-feather="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white focus:outline-none">
+                        <i data-feather="sun" class="hidden w-5 h-5 dark:block"></i>
+                        <i data-feather="moon" class="block w-5 h-5 dark:hidden"></i>
+                    </button>
+                    <div class="relative">
+                        <button class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white focus:outline-none">
+                            <i data-feather="bell" class="w-5 h-5"></i>
+                            <span class="absolute top-0 right-0 w-2 h-2 rounded-full bg-primary-500"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="flex-1 overflow-auto p-4">
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">سلام مدیر عزیز 👋</h1>
+                    <p class="text-gray-600 dark:text-gray-400">به پنل مدیریت وبلاگ فارسی خوش آمدید</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="p-4 bg-white rounded-lg shadow stat-card dark:bg-gray-800">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">تعداد نوشته‌ها</p>
+                                <p class="text-2xl font-bold text-gray-900 dark:text-white">124</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-primary-100 dark:bg-primary-900/30">
+                                <i data-feather="file-text" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center text-sm text-green-600 dark:text-green-400">
+                                <i data-feather="trending-up" class="w-4 h-4 ml-1"></i>
+                                <span>12% افزایش نسبت به ماه گذشته</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow stat-card dark:bg-gray-800">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">تعداد نظرات</p>
+                                <p class="text-2xl font-bold text-gray-900 dark:text-white">856</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-secondary-100 dark:bg-secondary-900/30">
+                                <i data-feather="message-square" class="w-6 h-6 text-secondary-600 dark:text-secondary-400"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center text-sm text-green-600 dark:text-green-400">
+                                <i data-feather="trending-up" class="w-4 h-4 ml-1"></i>
+                                <span>24% افزایش نسبت به ماه گذشته</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow stat-card dark:bg-gray-800">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">کاربران</p>
+                                <p class="text-2xl font-bold text-gray-900 dark:text-white">2,450</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-green-100 dark:bg-green-900/30">
+                                <i data-feather="users" class="w-6 h-6 text-green-600 dark:text-green-400"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center text-sm text-green-600 dark:text-green-400">
+                                <i data-feather="trending-up" class="w-4 h-4 ml-1"></i>
+                                <span>8.5% افزایش نسبت به ماه گذشته</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow stat-card dark:bg-gray-800">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">بازدید امروز</p>
+                                <p class="text-2xl font-bold text-gray-900 dark:text-white">1,234</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-yellow-100 dark:bg-yellow-900/30">
+                                <i data-feather="eye" class="w-6 h-6 text-yellow-600 dark:text-yellow-400"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center text-sm text-green-600 dark:text-green-400">
+                                <i data-feather="trending-up" class="w-4 h-4 ml-1"></i>
+                                <span>15% افزایش نسبت به دیروز</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Posts & Comments -->
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                    <!-- Recent Posts -->
+                    <div class="p-4 bg-white rounded-lg shadow dark:bg-gray-800">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-lg font-medium text-gray-900 dark:text-white">آخرین نوشته‌ها</h2>
+                            <a href="posts.html" class="text-sm text-primary-600 dark:text-primary-400 hover:underline">مشاهده همه</a>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <img class="w-16 h-16 rounded-md" src="http://static.photos/technology/200x200/1" alt="Post image">
+                                <div class="mr-3">
+                                    <h3 class="font-medium text-gray-900 dark:text-white">راهنمای کامل ری اکت 2024</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">2 ساعت پیش</p>
+                                    <div class="flex items-center mt-1 space-x-2 space-x-reverse">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">تکنولوژی</span>
+                                        <span class="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                                            <i data-feather="eye" class="w-3 h-3 ml-1"></i> 1,245
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <img class="w-16 h-16 rounded-md" src="http://static.photos/travel/200x200/2" alt="Post image">
+                                <div class="mr-3">
+                                    <h3 class="font-medium text-gray-900 dark:text-white">10 مکان دیدنی ایران</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">1 روز پیش</p>
+                                    <div class="flex items-center mt-1 space-x-2 space-x-reverse">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">سفر</span>
+                                        <span class="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                                            <i data-feather="eye" class="w-3 h-3 ml-1"></i> 2,103
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <img class="w-16 h-16 rounded-md" src="http://static.photos/food/200x200/3" alt="Post image">
+                                <div class="mr-3">
+                                    <h3 class="font-medium text-gray-900 dark:text-white">دستور پخت قرمه سبزی</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">2 روز پیش</p>
+                                    <div class="flex items-center mt-1 space-x-2 space-x-reverse">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">غذا</span>
+                                        <span class="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                                            <i data-feather="eye" class="w-3 h-3 ml-1"></i> 3,456
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Comments -->
+                    <div class="p-4 bg-white rounded-lg shadow dark:bg-gray-800">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-lg font-medium text-gray-900 dark:text-white">آخرین نظرات</h2>
+                            <a href="comments.html" class="text-sm text-primary-600 dark:text-primary-400 hover:underline">مشاهده همه</a>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <img class="w-10 h-10 rounded-full" src="http://static.photos/people/200x200/4" alt="User avatar">
+                                <div class="mr-3">
+                                    <div class="flex items-center">
+                                        <h3 class="font-medium text-gray-900 dark:text-white">علی محمدی</h3>
+                                        <span class="mr-2 text-xs text-gray-500 dark:text-gray-400">30 دقیقه پیش</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">مقاله خیلی خوبی بود. ممنون از زحمات شما</p>
+                                    <div class="flex mt-1 space-x-3 space-x-reverse">
+                                        <a href="#" class="text-xs text-primary-600 dark:text-primary-400 hover:underline">پاسخ</a>
+                                        <a href="#" class="text-xs text-green-600 dark:text-green-400 hover:underline">تایید</a>
+                                        <a href="#" class="text-xs text-red-600 dark:text-red-400 hover:underline">حذف</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <img class="w-10 h-10 rounded-full" src="http://static.photos/people/200x200/5" alt="User avatar">
+                                <div class="mr-3">
+                                    <div class="flex items-center">
+                                        <h3 class="font-medium text-gray-900 dark:text-white">زهرا احمدی</h3>
+                                        <span class="mr-2 text-xs text-gray-500 dark:text-gray-400">2 ساعت پیش</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">خیلی عالی توضیح دادید. لطفا درباره ویو هم مطلب بذارید</p>
+                                    <div class="flex mt-1 space-x-3 space-x-reverse">
+                                        <a href="#" class="text-xs text-primary-600 dark:text-primary-400 hover:underline">پاسخ</a>
+                                        <a href="#" class="text-xs text-green-600 dark:text-green-400 hover:underline">تایید</a>
+                                        <a href="#" class="text-xs text-red-600 dark:text-red-400 hover:underline">حذف</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <img class="w-10 h-10 rounded-full" src="http://static.photos/people/200x200/6" alt="User avatar">
+                                <div class="mr-3">
+                                    <div class="flex items-center">
+                                        <h3 class="font-medium text-gray-900 dark:text-white">محسن رضایی</h3>
+                                        <span class="mr-2 text-xs text-gray-500 dark:text-gray-400">5 ساعت پیش</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">سلام. میشه لطفا منابع مقاله رو هم ذکر کنید؟</p>
+                                    <div class="flex mt-1 space-x-3 space-x-reverse">
+                                        <a href="#" class="text-xs text-primary-600 dark:text-primary-400 hover:underline">پاسخ</a>
+                                        <a href="#" class="text-xs text-green-600 dark:text-green-400 hover:underline">تایید</a>
+                                        <a href="#" class="text-xs text-red-600 dark:text-red-400 hover:underline">حذف</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.querySelector('html');
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+        
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>
