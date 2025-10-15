@@ -1,0 +1,77 @@
+<%- include('partials/header.ejs') %>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center">
+    <div class="fixed inset-0 bg-gradient-to-br from-gray-800 to-gray-900 z-0"></div>
+    
+    <div class="relative z-10 w-full max-w-md px-6 py-8">
+        <div class="auth-card bg-gray-800 bg-opacity-70 rounded-xl shadow-2xl p-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-primary mb-2">ثبت نام</h2>
+                <p class="text-gray-400">حساب کاربری جدید ایجاد کنید</p>
+            </div>
+            
+            <form class="space-y-6">
+                <div class="space-y-4">
+                    <div>
+                        <label for="username" class="block mb-2 text-sm font-medium text-gray-300">نام کاربری</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <i data-feather="user" class="text-gray-500"></i>
+                            </div>
+                            <input type="text" id="username" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="username" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-300">ایمیل</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <i data-feather="mail" class="text-gray-500"></i>
+                            </div>
+                            <input type="email" id="email" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="example@domain.com" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-300">رمز عبور</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <i data-feather="lock" class="text-gray-500"></i>
+                            </div>
+                            <input type="password" id="password" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-300">تکرار رمز عبور</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <i data-feather="lock" class="text-gray-500"></i>
+                            </div>
+                            <input type="password" id="confirm-password" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-600 rounded bg-gray-700 focus:ring-3 focus:ring-primary" required>
+                    </div>
+                    <div class="mr-3 text-sm">
+                        <label for="terms" class="font-light text-gray-300">با <a class="font-medium text-primary hover:underline" href="#">شرایط استفاده</a> موافقم</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="w-full text-white bg-primary hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-300">ثبت نام</button>
+                
+                <div class="text-sm font-medium text-gray-400 text-center">
+                    قبلاً حساب کاربری دارید؟ <a href="login.html" class="text-primary hover:underline">وارد شوید</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

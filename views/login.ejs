@@ -1,0 +1,93 @@
+<%- include('partials/header.ejs') %>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center">
+    <div class="fixed inset-0 bg-gradient-to-br from-gray-800 to-gray-900 z-0"></div>
+    
+    <div class="relative z-10 w-full max-w-md px-6 py-8">
+        <div class="auth-card bg-gray-800 bg-opacity-70 rounded-xl shadow-2xl p-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-primary mb-2">ورود به حساب</h2>
+                <p class="text-gray-400">خوش آمدید! لطفا وارد شوید</p>
+            </div>
+            
+            <form class="space-y-6">
+                <div class="space-y-4">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-300">ایمیل یا نام کاربری</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <i data-feather="user" class="text-gray-500"></i>
+                            </div>
+                            <input type="text" id="email" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="example@domain.com" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-300">رمز عبور</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <i data-feather="lock" class="text-gray-500"></i>
+                            </div>
+                            <input type="password" id="password" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <input id="remember" type="checkbox" class="w-4 h-4 border border-gray-600 rounded bg-gray-700 focus:ring-primary">
+                            <label for="remember" class="mr-2 text-sm text-gray-300">مرا به خاطر بسپار</label>
+                        </div>
+                        <a href="#" class="text-sm text-primary hover:underline">رمز عبور را فراموش کرده‌اید؟</a>
+                    </div>
+                </div>
+                
+                <!-- <button type="submit" class="w-full text-white bg-primary hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-300">ورود</button> -->
+
+                <button
+                    type="submit"
+                    class="w-full text-white bg-primary border border-purple-600 hover:bg-purple-700 hover:border-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-300"
+                    >
+                    ورود
+                </button>
+
+
+                <div class="flex items-center my-4">
+                    <div class="flex-grow border-t border-gray-600"></div>
+                    <span class="px-4 text-gray-400">یا</span>
+                    <div class="flex-grow border-t border-gray-600"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="#"
+  class="flex items-center justify-center py-2 px-4 text-sm font-medium text-purple-600 rounded-lg border border-gray-600 hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:outline-none transition duration-300"
+>
+  <i data-feather="github" class="ml-2"></i>
+  GitHub
+</a>
+
+                    <a dir="ltr" href="#"
+                        class="flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 rounded-lg border border-gray-600 hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:outline-none transition duration-300"
+                        >
+                        <i data-feather="google" class="ml-2"></i>
+                        <span class="flex">
+                            <span class="text-[#4285F4]">G</span>
+                            <span class="text-[#EA4335]">o</span>
+                            <span class="text-[#FBBC05]">o</span>
+                            <span class="text-[#4285F4]">g</span>
+                            <span class="text-[#34A853]">l</span>
+                            <span class="text-[#EA4335]">e</span>
+                        </span>
+                        </a>
+
+                </div>
+                
+                <div class="text-sm font-medium text-gray-400 text-center">
+                    حساب کاربری ندارید؟ <a href="register.html" class="text-primary hover:underline">ثبت نام کنید</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

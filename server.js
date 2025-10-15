@@ -22,7 +22,7 @@ app.set('views', 'views')
 app.use('/admin', require('./routes/admin'))
 app.use('/', require('./routes/home'))
 app.use((req, res) => {
-  res.status(404).render('404')})
+  res.status(404).render('404',{headTitle : 'صفحه پیدا نشد'})})
 
 
 app.listen(process.env.PORT, () => {
