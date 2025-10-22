@@ -1,0 +1,30 @@
+<% if (errors && errors.length > 0) { %>
+  <div id="alert-message" class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white p-4 rounded-lg opacity-0 transition-opacity duration-500 z-50
+      w-11/12 sm:w-96">
+    <ul class="list-disc list-inside text-sm sm:text-base">
+      <% for (const error of errors) { %>
+        <li><%= error %></li>
+      <% } %>
+    </ul>
+  </div>
+
+  <script>
+    const alert = document.getElementById('alert-message');
+    if (alert) {
+      // پدیدار شدن نرم
+      requestAnimationFrame(() => {
+        alert.classList.remove('opacity-0');
+        alert.classList.add('opacity-100');
+      });
+
+      // محو شدن بعد 3 ثانیه
+      setTimeout(() => {
+        alert.classList.remove('opacity-100');
+        alert.classList.add('opacity-0');
+
+        // حذف از DOM بعد از افکت
+        setTimeout(() => alert.remove(), 500);
+      }, 5000);
+    }
+  </script>
+<% } %>

@@ -10,6 +10,7 @@ if (process.env.NODE_ENV === 'development') {
 //? config
 const dotenv = require('dotenv')
 dotenv.config({path: './config/config.env'})
+app.use(express.urlencoded({extended: false}))
 
 //? database
 connectDB()
