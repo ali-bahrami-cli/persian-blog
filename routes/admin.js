@@ -1,24 +1,5 @@
 const {Router} = require('express')
 const router = new Router()
-const User = require('../models/User')
-
-
-//? @desc users
-//* Handle user registration
-router.post('/register-user',async (req, res) => {
-  try {
-    await User.validateUser(req.body)
-    // If validation passes, create the user
-    res.redirect('/login')
-  } catch (err) {
-    console.log(err);
-    res.render('register', {
-      headTitle: 'ثبت نام',
-      errors: err.errors,
-      // userData: req.body
-    })
-  }
-})
 
 //? @desc admins
 

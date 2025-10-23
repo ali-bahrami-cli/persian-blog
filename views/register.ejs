@@ -4,7 +4,7 @@
 
     <div class="relative z-10 w-full max-w-md px-6 py-8">
 
-        <%- include('partials/messages.ejs') %>
+        <%- include('partials/validationErrors.ejs') %>
 
         <div class="auth-card bg-gray-800 bg-opacity-70 rounded-xl shadow-2xl p-8">
             <div class="text-center mb-8">
@@ -12,7 +12,7 @@
                 <p class="text-gray-400">حساب کاربری جدید ایجاد کنید</p>
             </div>
             
-            <form method="post" action="/admin/register-user" class="space-y-6">
+            <form method="post" action="/register-user" class="space-y-6">
                 <div class="space-y-4">
                     <div>
                         <label for="username" class="block mb-2 text-sm font-medium text-gray-300">نام کاربری</label>

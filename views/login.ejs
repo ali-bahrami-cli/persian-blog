@@ -3,13 +3,17 @@
     <div class="fixed inset-0 bg-gradient-to-br from-gray-800 to-gray-900 z-0"></div>
     
     <div class="relative z-10 w-full max-w-md px-6 py-8">
+
+        <%- include('partials/login-success-msg.ejs') %>
+        <%- include('partials/validationErrors.ejs') %>
+
         <div class="auth-card bg-gray-800 bg-opacity-70 rounded-xl shadow-2xl p-8">
             <div class="text-center mb-8">
                 <h2 class="text-3xl font-bold text-primary mb-2">ورود به حساب</h2>
                 <p class="text-gray-400">خوش آمدید! لطفا وارد شوید</p>
             </div>
             
-            <form class="space-y-6">
+            <form class="space-y-6" method="post" action="/login-user">
                 <div class="space-y-4">
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-300">ایمیل یا نام کاربری</label>
@@ -17,7 +21,7 @@
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                                 <i data-feather="user" class="text-gray-500"></i>
                             </div>
-                            <input dir="ltr" type="text" id="email" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="example@domain.com" required>
+                            <input dir="ltr" type="text" id="email" name="email" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="example@domain.com" required>
                         </div>
                     </div>
                     
@@ -27,7 +31,7 @@
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                                 <i data-feather="lock" class="text-gray-500"></i>
                             </div>
-                            <input dir="ltr" type="password" id="password" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="••••••••" required>
+                            <input dir="ltr" type="password" id="password" name="password" class="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-10" placeholder="••••••••" required>
                         </div>
                     </div>
                     
